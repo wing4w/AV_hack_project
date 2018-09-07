@@ -1,3 +1,7 @@
 네이버 백신
 
-보호기법 : DEP, ASLR 걸려있음
+보호기법 : 
+
+		메인에는 DEP, ASLR 걸려있음 
+
+		Nsavsvc.npc Nsvmon.npc  이 프로세스는 DEP 와 ASLR 이 걸려있지 않음
