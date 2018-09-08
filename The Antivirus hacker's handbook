@@ -547,7 +547,33 @@
 
 
 
--C12- 
+-C12- Static Analysis
+
+
+	
+	
+	
+	1. File Format Parsers 
+
+
+		- nm 명령어로 심볼을 확인하려고 해도 심볼이 날아간 상태에서 readelf 명령어로 심볼을 확인할수있다. 이후 egrep -i "(packer|compress|gzip|bz2)" | more 명령어를 통해 심볼을 보면 IDA로 분석했을때 심볼이 안날라 갈수 있다는것을 보여준다. 
+
+
+		- 이후 취약점을 찾기 위해 malloc , free 같은 메모리를 건드는 부분부터 탐색 하기 위해 함수를 사용하는 부분을 찾아 분석한다. IDA에서 x 키로 호출 가능한것 같음 
+
+
+		- 책에 나온 취약점은 멀록에서 공간을 할당할때 memset 사용 부분에서   unsigned int 로 선언된 값에 size 라는 인자를 -1 수정해주면 0xFFFFFF~ 가되는데 Dest 의 주소부터 끝까지 0으로 덮이면서 시그 폴트 에러를 띄어준다. 
+
+
+		
+	2. remote service
+
+		- 이 부분은 리눅스 버전 취약점을 찾는 관계로 따로 정리하지 않겠습니다. 
+
+		- set uid 에 관한 취약점 이었음 
+
+
+
 
 
 	
